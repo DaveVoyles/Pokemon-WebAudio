@@ -57,6 +57,10 @@
 
                 <aside>
                     <h3>aside</h3>
+                    <p>
+                        <input value="pikachu"
+                               oninput="document.querySelector('x-pokemon').name = this.value">
+                    </p>
                     <x-pokemon name="pikachu"></x-pokemon>
                 </aside>
 
@@ -71,12 +75,15 @@
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
-
         <script src="js/main.js"></script>
-        <!-- External references to Polymer -- consider moving this locally -->
-        <script src="//www.polymer-project.org/components/platform/platform.js"></script>
-        <link rel="import" href="//www.polymer-project.org/components/polymer/polymer.html">
-        <link rel="import" href="bower_components/x-pokemon/x-pokemon.html">
+
+        <script src="bower_components/angular/angular.js"></script>
+        <!-- Polymer -->
+        <script src="bower_components/webcomponentsjs/webcomponents.js"></script>
+        <link href="bower_components/polymer/polymer.html" rel="import">
+        <!-- Pokemon specific files -->
+        <script src="bower_components/angular-pokemon/angular-pokemon.js"></script>
+        <link rel="import" href="bower_components/x-pokemon/x-pokemon.html" >
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
