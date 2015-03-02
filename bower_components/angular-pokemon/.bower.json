@@ -1,0 +1,31 @@
+{
+  "name": "angular-pokemon",
+  "version": "0.0.2",
+  "homepage": "https://github.com/gdi2290/angular-pokemon",
+  "authors": [
+    "gdi2290 <github@gdi2290.com>"
+  ],
+  "main": "angular-pokemon.js",
+  "description": "Pokemon directive for Angular.js",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.2.0"
+  },
+  "_release": "0.0.2",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.0.2",
+    "commit": "385d05990a1475421831d17a23dbad09314b4060"
+  },
+  "_source": "git://github.com/gdi2290/angular-pokemon.git",
+  "_target": "~0.0.2",
+  "_originalSource": "angular-pokemon",
+  "_direct": true
+}

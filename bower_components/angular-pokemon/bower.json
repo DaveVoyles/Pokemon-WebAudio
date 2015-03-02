@@ -1,0 +1,21 @@
+{
+  "name": "angular-pokemon",
+  "version": "0.0.2",
+  "homepage": "https://github.com/gdi2290/angular-pokemon",
+  "authors": [
+    "gdi2290 <github@gdi2290.com>"
+  ],
+  "main": "angular-pokemon.js",
+  "description": "Pokemon directive for Angular.js",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.2.0"
+  }
+}

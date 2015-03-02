@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
@@ -13,7 +13,7 @@
 
         <link rel="stylesheet" href="css/normalize.min.css">
         <link rel="stylesheet" href="css/main.css">
-
+  
         <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
     </head>
     <body>
@@ -36,7 +36,6 @@
 
         <div class="main-container">
             <div class="main wrapper clearfix">
-
                 <article>
                     <header>
                         <h1>article header h1</h1>
@@ -58,7 +57,7 @@
 
                 <aside>
                     <h3>aside</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sodales urna non odio egestas tempor. Nunc vel vehicula ante. Etiam bibendum iaculis libero, eget molestie nisl pharetra in. In semper consequat est, eu porta velit mollis nec. Curabitur posuere enim eget turpis feugiat tempor. Etiam ullamcorper lorem dapibus velit suscipit ultrices.</p>
+                    <x-pokemon name="pikachu"></x-pokemon>
                 </aside>
 
             </div> <!-- #main -->
@@ -74,6 +73,10 @@
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
 
         <script src="js/main.js"></script>
+        <!-- External references to Polymer -- consider moving this locally -->
+        <script src="//www.polymer-project.org/components/platform/platform.js"></script>
+        <link rel="import" href="//www.polymer-project.org/components/polymer/polymer.html">
+        <link rel="import" href="bower_components/x-pokemon/x-pokemon.html">
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
