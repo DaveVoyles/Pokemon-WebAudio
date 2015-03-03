@@ -10,7 +10,7 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
-
+		<!-- CSS -->
         <link rel="stylesheet" href="css/normalize.min.css">
         <link rel="stylesheet" href="css/main.css">
   
@@ -23,7 +23,7 @@
 
         <div class="header-container">
             <header class="wrapper clearfix">
-                <h1 class="title">h1.title</h1>
+                <h1 class="title">Pokemon Finder</h1>
                 <nav>
                     <ul>
                         <li><a href="#">nav ul li a</a></li>
@@ -37,77 +37,53 @@
         <div class="main-container">
             <div class="main wrapper clearfix">
                 <article>
-                    <header>
-                        <h1>article header h1</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sodales urna non odio egestas tempor. Nunc vel vehicula ante. Etiam bibendum iaculis libero, eget molestie nisl pharetra in. In semper consequat est, eu porta velit mollis nec.</p>
-                    </header>
-                    <section>
-                        <h2>article section h2</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sodales urna non odio egestas tempor. Nunc vel vehicula ante. Etiam bibendum iaculis libero, eget molestie nisl pharetra in. In semper consequat est, eu porta velit mollis nec. Curabitur posuere enim eget turpis feugiat tempor. Etiam ullamcorper lorem dapibus velit suscipit ultrices. Proin in est sed erat facilisis pharetra.</p>
-                    </section>
-                    <section>
-                        <h2>article section h2</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sodales urna non odio egestas tempor. Nunc vel vehicula ante. Etiam bibendum iaculis libero, eget molestie nisl pharetra in. In semper consequat est, eu porta velit mollis nec. Curabitur posuere enim eget turpis feugiat tempor. Etiam ullamcorper lorem dapibus velit suscipit ultrices. Proin in est sed erat facilisis pharetra.</p>
-                    </section>
-                    <footer>
-                        <h3>article footer h3</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sodales urna non odio egestas tempor. Nunc vel vehicula ante. Etiam bibendum iaculis libero, eget molestie nisl pharetra in. In semper consequat est, eu porta velit mollis nec. Curabitur posuere enim eget turpis feugiat tempor.</p>
-                    </footer>
+					<header>
+						<h1>article header h1</h1>
+						<p>This web app takes advantage of Web Components and Polymer to enable new HTML features in the browser.</p>
+						<p>
+							In this particular case, we are using <a href="https://github.com/passy/x-pokemon">
+							the x-pokemon web component </a> to pull the images from a database, as well as the 
+							<a href="http://zenorocha.github.io/voice-elements/">voice-elements web component</a> to speak the name of the pokemon we entered.							
+						</p>
+					</header>
+
                 </article>
 
+				<!-- Container for Web Components content -->
                 <aside>
-                    <h3>aside</h3>
-                    <!-- Pokemon text-to-speech -->
+                    <h3>Enter the name of a Pokemon!</h3>
                     <form id="player-form" class="pure-form">
-                        <fieldset>
-                            <input        id="player-input"   type="text" value="You have reached your destination">
-                            <button       id="player-submit"  class="pure-button pure-button-primary">Speak!</button>
-                            <voice-player id="player-element" text=""></voice-player>
-                        </fieldset>
+						<input  id="player-input" type="text" value="pikachu">
+						<button id="player-submit" class="pure-button pure-button-primary">Speak!</button>
+						<!-- Text-to-speech -->
+						<voice-player id="player-element" text=""></voice-player>
                     </form>
-                    <script>
-                        var form    = document.querySelector('#player-form'   ),
-                            input   = document.querySelector('#player-input'  ),
-                            element = document.querySelector('#player-element');
-
-                        input.addEventListener('input', function (e) {
-                            element.setAttribute('text', input.value);
-                        });
-
-                        form.addEventListener('submit', function (e) {
-                            e.preventDefault();
-                            element.speak();
-                        });
-                    </script>
-                    <p>
-                        <!-- Draw Pokemon here -->
-                        <input value="pikachu"
-                               oninput="document.querySelector('x-pokemon').name = this.value">
-                    </p>
-                    <x-pokemon name="pikachu"></x-pokemon>
+					<!-- Draw Pokemon here -->
+                    <x-pokemon id ="x-pokemon" name="pikachu"></x-pokemon>
                 </aside>
-
             </div> <!-- #main -->
         </div> <!-- #main-container -->
 
         <div class="footer-container">
             <footer class="wrapper">
-                <h3>footer</h3>
+				<p>&copy;Dave Voyles |  2015  |  <a href="www.DaveVoyles.com">DaveVoyles.com</a></p>
             </footer>
         </div>
+
+		<script>
+
+		</script>
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
         <script src="js/main.js"></script>
-
         <script src="bower_components/angular/angular.js"></script>
         <!-- Polymer -->
         <script src="bower_components/webcomponentsjs/webcomponents.js"></script>
         <link href="bower_components/polymer/polymer.html" rel="import">
         <!-- Pokemon specific files -->
         <script src="bower_components/angular-pokemon/angular-pokemon.js"></script>
-        <link rel="import" href="bower_components/x-pokemon/x-pokemon.html">
-        
+        <link rel="import" href="bower_components/x-pokemon/x-pokemon.html">     
         <!-- Voice ELements -->
         <link rel="import" href="bower_components/voice-elements/dist/voice-player.html">
         <link rel="import" href="bower_components/voice-elements/dist/voice-recognition.html">
