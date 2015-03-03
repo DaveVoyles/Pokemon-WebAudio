@@ -57,7 +57,30 @@
 
                 <aside>
                     <h3>aside</h3>
+                    <!-- Pokemon text-to-speech -->
+                    <form id="player-form" class="pure-form">
+                        <fieldset>
+                            <input        id="player-input"   type="text" value="You have reached your destination">
+                            <button       id="player-submit"  class="pure-button pure-button-primary">Speak!</button>
+                            <voice-player id="player-element" text=""></voice-player>
+                        </fieldset>
+                    </form>
+                    <script>
+                        var form    = document.querySelector('#player-form'   ),
+                            input   = document.querySelector('#player-input'  ),
+                            element = document.querySelector('#player-element');
+
+                        input.addEventListener('input', function (e) {
+                            element.setAttribute('text', input.value);
+                        });
+
+                        form.addEventListener('submit', function (e) {
+                            e.preventDefault();
+                            element.speak();
+                        });
+                    </script>
                     <p>
+                        <!-- Draw Pokemon here -->
                         <input value="pikachu"
                                oninput="document.querySelector('x-pokemon').name = this.value">
                     </p>
@@ -83,7 +106,11 @@
         <link href="bower_components/polymer/polymer.html" rel="import">
         <!-- Pokemon specific files -->
         <script src="bower_components/angular-pokemon/angular-pokemon.js"></script>
-        <link rel="import" href="bower_components/x-pokemon/x-pokemon.html" >
+        <link rel="import" href="bower_components/x-pokemon/x-pokemon.html">
+        
+        <!-- Voice ELements -->
+        <link rel="import" href="bower_components/voice-elements/dist/voice-player.html">
+        <link rel="import" href="bower_components/voice-elements/dist/voice-recognition.html">
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
