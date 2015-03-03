@@ -53,6 +53,7 @@
                 <aside>
                     <h3>Enter the name of a Pokemon!</h3>
                     <form id="player-form" class="pure-form">
+						<x-radial-buttons></x-radial-buttons>
 						<input  id="player-input" type="text" value="pikachu">
 						<button id="player-submit" class="pure-button pure-button-primary">Speak!</button>
 						<button id="btn-change-accent" class="pure-button pure-button-primary">Change Accent</button>
@@ -81,13 +82,16 @@
         <script src="bower_components/angular/angular.js"></script>
         <!-- Polymer -->
         <script src="bower_components/webcomponentsjs/webcomponents.js"></script>
-        <link href="bower_components/polymer/polymer.html" rel="import">
+        <link rel="import" href="bower_components/polymer/polymer.html" >
         <!-- Pokemon specific files -->
         <script src="bower_components/angular-pokemon/angular-pokemon.js"></script>
         <link rel="import" href="bower_components/x-pokemon/x-pokemon.html">     
-        <!-- Voice ELements -->
+        <!-- Voice Elements -->
         <link rel="import" href="bower_components/voice-elements/dist/voice-player.html">
         <link rel="import" href="bower_components/voice-elements/dist/voice-recognition.html">
+		<!-- Custom radial buttons. Just playing with Material Design -->
+		<link rel="import" href="bower_components/radial-buttons/x-radial-buttons.html">
+
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>

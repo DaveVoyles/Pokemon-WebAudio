@@ -1,0 +1,31 @@
+﻿<link href="bower_components/polymer/polymer.html" rel="import">
+<link rel="import" href="../paper-radio-group/paper-radio-group.html">
+<link rel="import" href="../paper-radio-button/paper-radio-button.html">
+
+<polymer-element name="x-radial-buttons">
+
+	<template>
+		<style>
+			#paper_radio_group {
+				left: 690px;
+				top: 380px;
+				position: absolute;
+				width: 440px;
+				height: 50px;
+			}
+		</style>
+		<paper-radio-group selected="English-GB" valueattr="label" selectedindex="1" id="paper_radio_group">
+			<paper-radio-button label="English - US" id="paper_radio_btn_en-US"></paper-radio-button>
+			<paper-radio-button checked label="English-GB" id="paper_radio_btn_en-GB"></paper-radio-button>
+			<paper-radio-button label="Spanish" id="paper_radio_btn_es-ES"></paper-radio-button>
+		</paper-radio-group>
+	</template>
+
+	<script>
+
+    Polymer({
+		});
+
+	</script>
+
+</polymer-element>
