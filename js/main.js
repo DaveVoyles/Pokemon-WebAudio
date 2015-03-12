@@ -24,12 +24,17 @@
 
 (function (pokemonApp) {
 
-    var form                 = document.querySelector('#player-form'	  ),  // Contrainer for web audio
-        input                = document.querySelector('#player-input'     ),  // Enter name of pokemon here
-        playerElement        = document.querySelector('#player-element'	  ),  // Web component that speaks the name of the Pokemon
-        xPokemon             = document.querySelector('#x-pokemon'		  ),  // Web component for grabbing the pokemon from the DB
-        radialButtons		 = document.querySelector("x-radial-buttons"  ),  // Notice, not grabbing the # [id]
-       	playerAccent         = playerElement.getAttribute("accent"		  );  // Grabbing Polymer attribute
+	var form          = document.querySelector('#player-form'    ),  // Contrainer for web audio
+        input         = document.querySelector('#player-input'   ),  // Enter name of pokemon here
+        playerElement = document.querySelector('#player-element' ),  // Web component that speaks the name of the Pokemon
+        xPokemon      = document.querySelector('#x-pokemon'		 ),  // Web component for grabbing the pokemon from the DB
+        radialButtons = document.querySelector("x-radial-buttons"),  // Notice, not grabbing the # [id]
+       	playerAccent  = playerElement.getAttribute("accent"		 ); 	// Grabbing Polymer attribute
+
+	// Sets the default text for the Web Audio component. Without this, the player will not speak unless
+	// You change the name of the Pokemon
+    playerElement.setAttribute('text', "Pikachu");
+
 
 	/* -- Event Listeners ------------------------------------------------ */
     form.addEventListener('submit', function (e) { window.pokemonApp.sayTheName(e) });
