@@ -1,50 +1,45 @@
-(function (undefined) {
-
-    var pokemonApp = {};
+(function (pokemonApp) {
 
 	// Grab inputs and button for speech-to-text
-    var form                 = document.querySelector('#player-form'),
-        input                = document.querySelector('#player-input'),
-        playerElement        = document.querySelector('#player-element'),
-        xPokemon             = document.querySelector('#x-pokemon'),
-        btn_changeAccent     = document.querySelector('#btn-change-accent'),
-        radialButtonTemplate = document.querySelector("#radial-button-template");
+    var form                 = document.querySelector('#player-form'	  ),
+        input                = document.querySelector('#player-input'     ),
+        playerElement        = document.querySelector('#player-element'	  ),
+        xPokemon             = document.querySelector('#x-pokemon'		  ),
+        btnChangeAccent      = document.querySelector('#btn-change-accent'),
+        radialButtons	     = document.querySelector("x-radial-buttons"  );  // Notice, not grabbing the # [id]
+      	playerAccent         = playerElement.getAttribute("accent"		  );  // Grabbing Polymer attribute
 
-	// Take text from input & set it as the text that the speaker will say.
-	// Set the name of the pokemon, which angular will then grab from the pokemon DB 
-	input.addEventListener('input', function (e) {
-		playerElement.setAttribute('text', input.value);
-		xPokemon.name = input.value;
-	});
+
+	/* Sets the name of the pokemon, based on the text the user enters in the input tag
+	*  after each character, angular pokemon then checks the pokemon DB to see if such a name exists.
+	*  Also, take text from input & set it as the text that the speaker will say. */
+    pokemonApp.setName = function () {
+      	playerElement.setAttribute('text', input.value);
+      	xPokemon.name = input.value;
+    };
+
 
 	// Say the text when button is pressed
-	form.addEventListener('submit', function (e) {
-		e.preventDefault();
-		playerElement.speak();
-		console.log(radialButtonTemplate);
-		radialButtonTemplate.changeAccent();
-	});
+    pokemonApp.sayTheName = function (e) {
+      	e.preventDefault();
+      	playerElement.speak();
+    };
 
 
-	changeAccent       = function () {
-		var accentAttr = playerElement.getAttribute("accent");
-		console.log(accentAttr);
-		var Newaccent  = playerElement.setAttribute("accent", "en-GB");
-		var player     = document.querySelector('#player-element');
-		playerAccent   = player.getAttribute("accent");
-		console.log(playerAccent);
-	};
-
-	// Event listener for changing accents
-	btn_changeAccent.addEventListener('submit', changeAccent());
-
-    // Shadow DOM
-	//var shadow = document.querySelector("#radial-button-template");
-    //var template = document.querySelector("#")
-
-	//var shadow = this.$.x-radial-buttons;
-    //console.log(shadow);
+	// Called by the X-radial-buttons web component
+	// Setting the accent based on the radial button the user selected
+	pokemonApp.changeAccent = function (accent) {
+		var Newaccent = playerElement.setAttribute("accent", accent);
+	}
 
 
-})();
+	/* -- Event Listeners ------------------------------------------------ */
+	btnChangeAccent.addEventListener('submit',				  window.pokemonApp.changeAccent() );
+	input.			addEventListener('input',				  window.pokemonApp.setName()	   );
+	form.			addEventListener('submit', function (e) { window.pokemonApp.sayTheName(e) });
+
+
+// Creates a namespace for this 'class'.
+// Use window.pokemonApp.FUNCTION_NAME() to call something from within this 'class'
+}(window.pokemonApp = window.pokemonApp || {}));
 
