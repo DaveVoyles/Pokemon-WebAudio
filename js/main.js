@@ -1,11 +1,10 @@
 (function (pokemonApp) {
 
 	// Grab inputs and button for speech-to-text
-    var form                 = document.querySelector('#player-form'	  ),
-        input                = document.querySelector('#player-input'     ),
-        playerElement        = document.querySelector('#player-element'	  ),
-        xPokemon             = document.querySelector('#x-pokemon'		  ),
-        btnChangeAccent      = document.querySelector('#btn-change-accent'),
+    var form                 = document.querySelector('#player-form'	  ),  // Contrainer for web audio
+        input                = document.querySelector('#player-input'     ),  // Enter name of pokemon here
+        playerElement        = document.querySelector('#player-element'	  ),  // Web component that speaks the name of the Pokemon
+        xPokemon             = document.querySelector('#x-pokemon'		  ),  // Web component for grabbing the pokemon from the DB
         radialButtons	     = document.querySelector("x-radial-buttons"  );  // Notice, not grabbing the # [id]
       	playerAccent         = playerElement.getAttribute("accent"		  );  // Grabbing Polymer attribute
 
@@ -26,7 +25,7 @@
     };
 
 
-	// Called by the X-radial-buttons web component
+	// @Caller: X-radial-buttons web component
 	// Setting the accent based on the radial button the user selected
 	pokemonApp.changeAccent = function (accent) {
 		var Newaccent = playerElement.setAttribute("accent", accent);
@@ -34,7 +33,6 @@
 
 
 	/* -- Event Listeners ------------------------------------------------ */
-	btnChangeAccent.addEventListener('submit',				  window.pokemonApp.changeAccent() );
 	input.			addEventListener('input',				  window.pokemonApp.setName()	   );
 	form.			addEventListener('submit', function (e) { window.pokemonApp.sayTheName(e) });
 
