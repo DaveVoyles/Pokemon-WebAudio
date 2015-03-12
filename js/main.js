@@ -41,8 +41,8 @@
 
 
 	/* -- Functions ----------------------------------------------------- */
-	/* Sets the name of the pokemon, based on the text the user enters in the input tag
-	*  after each character, angular pokemon then checks the pokemon DB to see if such a name exists.
+	/* Sets the name of the pokemon in both the Web Audio player & pokemonDB component, based on the text the user enters in the input tag.
+	*  After each character, angular pokemon then checks the pokemon DB to see if such a name exists.
 	*  Also, take text from input & set it as the text that the speaker will say. */
     pokemonApp.setName = function () {
       	playerElement.setAttribute('text', input.value);
