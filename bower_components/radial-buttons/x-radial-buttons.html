@@ -9,14 +9,14 @@
         <style>
             #paper_radio_group {
                 position: relative;
-                width: 440px;
-                height: 50px;
+                width:    440px;
+                height:   50px;
             }
         </style>
         <paper-radio-group selected="English-GB" valueattr="label" selectedindex="1" id="paper_radio_group">
             <paper-radio-button label="English-US" id="paper_radio_btn_en-US" on-click="{{ changeAccentUS }}"></paper-radio-button>
-            <paper-radio-button checked label="English-GB" id="paper_radio_btn_en-GB" on-click="{{ changeAccentGB }}"></paper-radio-button>
-            <paper-radio-button label="Spanish" id="paper_radio_btn_es-ES" on-click="{{ changeAccentES }}"></paper-radio-button>
+            <paper-radio-button label="English-GB" id="paper_radio_btn_en-GB" on-click="{{ changeAccentGB }}"></paper-radio-button>
+            <paper-radio-button label="Spanish"	   id="paper_radio_btn_es-ES" on-click="{{ changeAccentES }}"></paper-radio-button>
         </paper-radio-group>
     </template> <!-- /Shadow DOM -->
 
@@ -29,7 +29,6 @@
 			Polymer('x-radial-buttons', {
 				/* -- Methods --------------------------------------------------- */
 				getCurrentAccent: function () {
-            		console.log("Returning currentAccent: " + currentAccent );
             		return currentAccent;
 				},
 				/* Easily grab different elements from the Shadow DOM, and expose them to other .js files.
@@ -45,17 +44,14 @@
 					return this.$.paper_radio_group.querySelector("#paper_radio_btn_es-ES");
 				},
 				changeAccentUS: function(event, detail, sender) {
-					console.log("Changed accent to American. Old accent was: " + currentAccent);
 					var accent    = accentArr[0];
 					pokemonApp.changeAccent(accent);
 				},
 				changeAccentGB: function() {
-					console.log("Changed accent to British. Old accent was: " + currentAccent);
 					var accent    = accentArr[1];
             		pokemonApp.changeAccent(accent);
 				},
 				changeAccentES: function () {
-					console.log("Changed accent to Spanish. Old accent was:  " + currentAccent);
 					var accent    = accentArr[2];
 					pokemonApp.changeAccent(accent);
 				}
