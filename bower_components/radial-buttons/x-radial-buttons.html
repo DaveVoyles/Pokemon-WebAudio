@@ -3,7 +3,6 @@
 <link rel="import" href="../paper-radio-button/paper-radio-button.html">
 
 <polymer-element name="x-radial-buttons">
-
     <!-- Shadow DOM -->
     <template>
         <style>
@@ -21,12 +20,12 @@
     </template> <!-- /Shadow DOM -->
 
     <script>
-		 (function() { // IIFE makes attributes global
-		 	/* -- Global Attributes ------------------------------------------------ */
-		 	var currentAccent =  'en-US';
-			var accentArr	  = ['en-US', 'en-GB', 'es-ES'];
+		(function () { // IIFE makes attributes global 
+			/* -- Global Attributes ------------------------------------------------ */
+			var currentAccent = 'en-US';
+			var accentArr	  =  ['en-US', 'en-GB', 'es-ES'];
 
-			Polymer('x-radial-buttons', {
+		 	Polymer('x-radial-buttons', {
 				/* -- Methods --------------------------------------------------- */
 				getCurrentAccent: function () {
             		return currentAccent;
