@@ -34,8 +34,7 @@
         input         = document.querySelector('#player-input'   ),  // Enter name of pokemon here
         playerElement = document.querySelector('#player-element' ),  // Web component that speaks the name of the Pokemon
         xPokemon      = document.querySelector('#x-pokemon'		 ),  // Web component for grabbing the pokemon from the DB
-        radialButtons = document.querySelector("x-radial-buttons"),  // Notice, not grabbing the # [id]
-       	playerAccent  = playerElement.getAttribute("accent"		 );  // Grabbing Polymer attribute
+        radialButtons = document.querySelector("x-radial-buttons");  // Notice, not grabbing the # [id]
 
 	// Sets the default text for the Web Audio component. Without this, the player will not speak unless
 	// You change the name of the Pokemon
@@ -45,6 +44,9 @@
 	/* -- Event Listeners ------------------------------------------------ */
     form.addEventListener('submit',  function (e) { window.pokemonApp.sayTheName(e) });
 
+    /* Sets the name of the pokemon in both the Web Audio player & pokemonDB component, based on the text the user enters in the input tag.
+    *  After each character, angular pokemon then checks the pokemon DB to see if such a name exists.
+    *  Also, take text from input & set it as the text that the speaker will say. */
 	input.addEventListener('input',  function (e) {
 		playerElement.setAttribute('text', input.value);
 		xPokemon.name = input.value;
@@ -52,14 +54,6 @@
 
 
 	/* -- Functions ----------------------------------------------------- */
-	/* Sets the name of the pokemon in both the Web Audio player & pokemonDB component, based on the text the user enters in the input tag.
-	*  After each character, angular pokemon then checks the pokemon DB to see if such a name exists.
-	*  Also, take text from input & set it as the text that the speaker will say. */
-    pokemonApp.setName = function () {
-      	playerElement.setAttribute('text', input.value);
-      	xPokemon.name = input.value;
-    };
-
 
 	// Say the text when button is pressed
     pokemonApp.sayTheName = function (e) {
@@ -74,7 +68,7 @@
     pokemonApp.changeAccent = function (accent) {
     	var currentAccent = radialButtons.getCurrentAccent();
     	console.log("current accent is: " + currentAccent + ". " + "Changing accent to: " + accent);
-    	var Newaccent = playerElement.setAttribute("accent", accent);
+    	playerElement.setAttribute("accent", accent);
     };
 
 
